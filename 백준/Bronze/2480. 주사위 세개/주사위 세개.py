@@ -10,8 +10,6 @@ elif x == y or x == z:
 elif y == z:
     m = 1000 + (y * 100)
 else:
-    total = [x,y,z]
-    total.sort(reverse=True)
-    m = total[0] * 100
+    m = max(x,y,z) * 100
     
 print(m)
