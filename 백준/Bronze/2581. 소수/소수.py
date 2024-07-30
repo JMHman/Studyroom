@@ -1,8 +1,9 @@
+import sys
 import math
 
 # 소수 판별 함수
 def is_prime(num):
-    if num < 2:
+    if num <= 1:
         return False
     for i in range(2, int(math.sqrt(num)) + 1):
         if num % i == 0:
@@ -10,8 +11,8 @@ def is_prime(num):
     return True
 
 # 입력 받기
-M = int(input())
-N = int(input())
+M = int(sys.stdin.readline().strip())
+N = int(sys.stdin.readline().strip())
 
 # M 이상 N 이하의 소수 찾기
 prime_list = [num for num in range(M, N + 1) if is_prime(num)]
