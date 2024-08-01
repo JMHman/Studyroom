@@ -1,19 +1,14 @@
 import sys
-import string
 
-in_put = sys.stdin.readline().strip()
-alphabet_list = list(string.ascii_lowercase)
+# 입력 받기
+input_str = sys.stdin.readline().strip()
 
-alphabet_count = {}
-for char in alphabet_list:
-    alphabet_count[char] = 0
+# 알파벳 소문자의 빈도를 저장할 리스트 초기화 (길이 26, 초기값 0)
+alphabet_count = [0] * 26
 
-for char in in_put:
-    if char in alphabet_count:
-        alphabet_count[char] += 1
+# 문자열을 순회하면서 각 알파벳의 빈도를 증가
+for char in input_str:
+    alphabet_count[ord(char) - ord('a')] += 1
 
-result = []
-for char in alphabet_list:
-    result.append(str(alphabet_count[char]))
-
-print(' '.join(result))
+# 결과 출력
+print(' '.join(map(str, alphabet_count)))
