@@ -5,13 +5,13 @@ data = input().splitlines()
 
 N = int(data[0])
 
-results = []
-for i in range(1, N + 1):
+def strfryCheck(i):
     str1, str2 = data[i].split()
     if sorted(str1) == sorted(str2):
-        results.append("Possible")
+        print("Possible")
     else:
-        results.append("Impossible")
+        print("Impossible")
 
-for result in results:
-    print(result)
+results = []
+for i in range(1, N + 1):
+    strfryCheck(i)
