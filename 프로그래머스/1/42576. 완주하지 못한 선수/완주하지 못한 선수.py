@@ -1,15 +1,9 @@
+from collections import Counter
+
 def solution(participant, completion):
-    count_dict = {}
+    participant_count = Counter(participant)
+    completion_count = Counter(completion)
     
-    for name in participant:
-        if name in count_dict:
-            count_dict[name] += 1
-        else:
-            count_dict[name] = 1
-    
-    for name in completion:
-        count_dict[name] -= 1 
-            
-    for name,count in count_dict.items():
-        if count > 0:
-            return name
+    for person in participant_count:
+        if participant_count[person] > completion_count[person]:
+            return person
